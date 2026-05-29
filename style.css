@@ -1,0 +1,210 @@
+:root{
+      --bg: #060810;
+  --tx-1:#00ffa3;
+    --card-bg: rgba(255,255,255,0.03);
+    --card-border: rgba(0,255,163,0.12);
+    --tx-2:#c8d6e8;
+    --tx-3:#607090;
+    --tx-4:#ffb300;
+
+}
+
+
+body{
+      background: var(--bg);
+    color: var(--tx-2);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: crosshair;
+}
+ body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,163,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,163,0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  p{
+    color: var(--tx-3);
+  }
+
+.sr_nom{
+  font-family: 'Orbitron', monospace;
+  letter-spacing: 3px;
+    text-decoration: none;
+    font-weight: 900;
+    color: var(--tx-1);
+}
+.cmt{
+   font-family: 'Share Tech Mono', monospace;
+   color: var(--tx-1);
+}
+.contact{
+  display:flex;
+  gap:15px;
+  justify-content:center;
+}
+
+.btn{
+  width:85px;
+  height:65px;
+  border-radius: 5px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  
+  text-decoration:none;
+  color:white;
+  font-size:22px;
+  transition:0.3s;
+}
+
+.whatsapp{
+  background:#25D366;
+}
+
+.facebook{
+  background:#1877F2;
+}
+
+.email{
+  background:#444;
+}
+
+.btn:hover{
+  transform:scale(1.1);
+}
+.bl_r{
+        background: red;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        animation: bouler 2s ease 0.8s infinite alternate;
+        box-shadow: 0 0 20px red;
+      }
+      .bl_j{
+        background: yellow;
+        width:30px;
+        height:30px;
+        border-radius: 50%;
+        animation: boulej 2s ease 1s infinite alternate;
+        box-shadow: 0 0 20px yellow;
+      }
+      .bl_b{
+        background:#0c4bd9;
+        width:30px;
+        height:30px;
+        border-radius: 50%;
+        animation: bouleb 2s ease 1.2s infinite alternate;
+        box-shadow: 0 0 20px #25bcfa;
+      }
+      .box_boule{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 60px;
+      }
+     @keyframes  boulej{
+        from{
+          transform: translateY(0px);
+        }
+        to{
+          transform: translateY(-40px);
+        }
+      }
+      @keyframes  bouler{
+        from{
+          transform: translateY(0px);
+        }
+        to{
+          transform: translateY(-40px);
+        }
+      }
+      @keyframes  bouleb{
+        from{
+          transform: translateY(0px);
+        }
+        to{
+          transform: translateY(-40px);
+        }
+      }
+      .box{
+            background: var(--card-bg);
+            border: 2px solid var(--card-border);
+            padding: 1.5rem;
+            text-align: center;
+            width: 110px;
+            height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+      }
+      .n_1,.n_2{
+        justify-content: space-between;
+        display: flex;
+        padding: 15px;
+        }
+        .txt{
+          font-family: 'Share Tech Mono', monospace;
+          font-size: 27px;
+          color: var(--tx-4);
+        }
+        .ptt_detail{
+          color: var(--tx-3);
+              margin-top: 1.8rem;
+    font-size: 1.05rem;
+    max-width: 520px;
+    line-height: 1.7;
+        }
+        .lieu{
+          color: var(--tx-4);
+        }
+        .section{
+          color: var(--tx-1);
+          font-family: 'Share Tech Mono', monospace;
+          letter-spacing: 5px;
+          font-size: 12px;
+        }
+        .titre{
+          color: var(--tx-2);
+          font-family: 'Orbitron', monospace;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 1.5rem;
+        }
+        .nom{
+          font-size:50px;
+          color: var(--tx-2);
+        }
+        .pl{
+          color: var(--tx-2);
+          opacity: 20%;
+        }
+        .aptxt p {
+          color: var(--tx-3);
+    line-height: 1.9;
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+        }
+        .aptxt p strong{
+          color: var(--tx-2); font-weight: 600;
+        }
+        footer{
+          font-size: 10px;
+          text-align: center;
+        }
+        .cnnt{
+          text-align: center;
+          font-family: Tahoma;
+          font-size: 14px;
+        }
