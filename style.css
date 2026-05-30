@@ -1,5 +1,5 @@
 :root{
-      --bg: #060810;
+      --bg: #060820;
   --tx-1:#00ffa3;
     --card-bg: rgba(255,255,255,0.03);
     --card-border: rgba(0,255,163,0.12);
@@ -140,15 +140,15 @@ body{
             border: 2px solid var(--card-border);
             padding: 1.5rem;
             text-align: center;
-            width: 110px;
+            width: 100px;
             height: 90px;
             display: flex;
             justify-content: center;
             align-items: center;
-          
+          margin: 10px;
       }
       .n_1,.n_2{
-        justify-content: crnter;
+        justify-content: center;
         display: flex;
         padding: 15px;
         }
@@ -208,4 +208,16 @@ body{
           text-align: center;
           font-family: Tahoma;
           font-size: 14px;
+        }
+        .prj{
+          background: var(--card-bg);
+            border: 2px solid var(--card-border);
+            padding: 1.5rem;
+            text-align: center;
+            width: 300px;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          margin: 10px;
         }
