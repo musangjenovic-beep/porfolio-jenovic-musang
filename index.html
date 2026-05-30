@@ -1,119 +1,266 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>porfolio_jenovic</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Barlow:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/all.css" integrity="sha512-ajhUYg8JAATDFejqbeN7KbF2zyPbbqz04dgOLyGcYEk/MJD3V+HJhJLKvJ2VVlqrr4PwHeGTTWxbI+8teA7snw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   
-   <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Jenovic Musang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Barlow:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    :root {
+      --bg: #060810;
+      --tx-1: #00ffa3;
+      --card-bg: rgba(255,255,255,0.03);
+      --card-border: rgba(0,255,163,0.12);
+      --tx-2: #c8d6e8;
+      --tx-3: #607090;
+      --tx-4: #ffb300;
+    }
 
-  </head>
-  <body>
-  
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--tx-2);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      cursor: crosshair;
+      padding: 28px 20px;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,255,163,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,163,0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Hero ── */
+    .sr_nom {
+      font-family: 'Orbitron', monospace;
+      letter-spacing: 3px;
+      font-weight: 900;
+      color: var(--tx-1);
+      margin-bottom: 4px;
+    }
+    .cmt {
+      font-family: 'Share Tech Mono', monospace;
+      color: var(--tx-1);
+      margin-bottom: 18px;
+    }
+    .nom {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(36px, 10vw, 54px);
+      font-weight: 900;
+      color: var(--tx-2);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+    .ptt_detail {
+      color: var(--tx-3);
+      margin-top: 1.2rem;
+      font-size: 1rem;
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .lieu {
+      color: var(--tx-4);
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    /* ── Boules animées ── */
+    .box_boule {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin: 48px 0;
+    }
+    .bl_r, .bl_j, .bl_b {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+    }
+    .bl_r { background: red;    box-shadow: 0 0 20px red;    animation: boule 2s ease 0.8s infinite alternate; }
+    .bl_j { background: yellow; box-shadow: 0 0 20px yellow; animation: boule 2s ease 1.0s infinite alternate; }
+    .bl_b { background: #0c4bd9; box-shadow: 0 0 20px #25bcfa; animation: boule 2s ease 1.2s infinite alternate; }
+    @keyframes boule {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-40px); }
+    }
+
+    /* ── Sections ── */
+    .section {
+      color: var(--tx-1);
+      font-family: 'Share Tech Mono', monospace;
+      letter-spacing: 5px;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .titre {
+      color: var(--tx-2);
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 1.8rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 1rem;
+    }
+
+    /* ── Projets placeholder ── */
+    .projets_placeholder {
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed var(--card-border);
+      border-radius: 6px;
+      margin-bottom: 3rem;
+    }
+    .pl {
+      color: var(--tx-2);
+      opacity: 0.2;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    /* ── Compétences ── */
+    .skills_grid {
+      display: grid;
+      grid-template-columns: repeat(2, 110px);
+      gap: 14px;
+      margin-bottom: 2.5rem;
+    }
+    .box {
+      background: var(--card-bg);
+      border: 2px solid var(--card-border);
+      width: 110px;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .txt {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 27px;
+      color: var(--tx-4);
+    }
+
+    /* ── À Propos ── */
+    .aptxt p {
+      color: var(--tx-3);
+      line-height: 1.9;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+    .aptxt p strong { color: var(--tx-2); font-weight: 600; }
+
+    /* ── Contact ── */
+    .cnnt {
+      text-align: center;
+      font-family: Tahoma;
+      font-size: 14px;
+      margin-bottom: 1.5rem;
+    }
+    .cnnt p { color: var(--tx-3); line-height: 1.8; margin-bottom: 8px; }
+
+    .contact {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+    .btn {
+      width: 85px; height: 65px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: white;
+      font-size: 22px;
+      transition: transform 0.3s;
+    }
+    .btn:hover { transform: scale(1.1); }
+    .whatsapp { background: #25D366; }
+    .facebook { background: #1877F2; }
+    .email    { background: #444; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      font-size: 10px;
+      color: var(--tx-3);
+      padding-top: 1rem;
+      border-top: 1px solid var(--card-border);
+    }
+  </style>
+</head>
+<body>
+
   <h3 class="sr_nom">JNV</h3>
-  <h4 class="cmt"> > DEVELOPPEUR INDEPENDANT</h4>
+  <h4 class="cmt">&gt; DEVELOPPEUR INDEPENDANT</h4>
   <h1 class="nom">JENOVIC<br><span>MUSANG</span></h1>
   <p class="ptt_detail">Je crée des applications web modernes, des outils intelligents et des projets innovants avec HTML, CSS et JavaScript. J'aime explorer de nouvelles idées, apprendre constamment et transformer des concepts en solutions utiles</p>
-  
-  <h5 class="lieu">
-<i class="fas fa-map-marker"></i> LUBUMBASHI,RDC</h5>
+  <h5 class="lieu"><i class="fas fa-map-marker-alt"></i> LUBUMBASHI, RDC</h5>
 
- <div  class="box_boule">
-<div  class="bl_r"></div>
-<div  class="bl_j"></div>
-<div  class="bl_b"></div>
-</div>
+  <div class="box_boule">
+    <div class="bl_r"></div>
+    <div class="bl_j"></div>
+    <div class="bl_b"></div>
+  </div>
 
-<p class="section">//  RÉALISATIONS</p>
-<h1 class="titre">Projets</h1>
+  <p class="section">// RÉALISATIONS</p>
+  <h1 class="titre">Projets</h1>
+  <div class="projets_placeholder">
+    <p class="pl">tous les projets vont s'afficher ici</p>
+  </div>
 
-<div class="projets_placeholder">
-  <p class="pl">tous les projets vont s'afficher ici</p>
-</div>
+  <p class="section">// EXPERTISE</p>
+  <h1 class="titre">Compétences</h1>
+  <div class="skills_grid">
+    <div class="box"><h2 class="txt">HTML</h2></div>
+    <div class="box"><h2 class="txt">JS</h2></div>
+    <div class="box"><h2 class="txt">CSS</h2></div>
+    <div class="box"><h2 class="txt">SQL</h2></div>
+  </div>
 
-<p class="section">//  EXPERTISE</p>
-<h1 class="titre">Compétences</h1>
-<div class="skills_grid">
-  <div class="box"><h2 class="txt"><strong>HTML</strong></h2></div>
-  <div class="box"><h2 class="txt"><strong>JS</strong></h2></div>
-  <div class="box"><h2 class="txt"><strong>CSS</strong></h2></div>
-  <div class="box"><h2 class="txt"><strong>SQL</strong></h2></div>
-</div>
-<p class="section">//  MON HISTOIRE</p>
-<h1 class="titre">À Propos</h1>
+  <p class="section">// MON HISTOIRE</p>
+  <h1 class="titre">À Propos</h1>
+  <div class="aptxt">
+    <p>Je suis <strong>développeur web indépendant</strong> basé à Lubumbashi, en République Démocratique du Congo.</p>
+    <p>Je conçois et développe des <strong>sites web modernes</strong>, <strong>rapides</strong> et <strong>adaptés aux téléphones</strong> (responsive design).</p>
+    <p>Mon objectif est de transformer des idées simples en <strong>interfaces propres</strong>, <strong>utiles</strong> et agréables à utiliser.</p>
+    <p>Je travaille principalement avec <strong>HTML</strong>, <strong>CSS</strong> et <strong>JavaScript</strong>, et j'aime créer des projets personnels pour améliorer mes compétences.</p>
+    <p>J'ai aussi de l'intérêt pour les <strong>applications web interactives</strong>, les animations UI et les designs modernes inspirés des interfaces Android et Apple.</p>
+    <p>Chaque jour, j'apprends de nouvelles techniques pour devenir un <strong>développeur plus complet</strong> et construire des projets professionnels.</p>
+    <p>Mon but est de participer à des projets réels, aider des clients et évoluer dans le monde du développement web.</p>
+  </div>
 
-<div class="aptxt">
+  <p class="section">// COLLABORATION</p>
+  <h1 class="titre">Contact</h1>
+  <div class="cnnt">
+    <p>Tu as un projet, une idée ou une collaboration ? N'hésite pas à me contacter.</p>
+    <p>Je suis disponible pour la création de sites web, projets personnels et collaborations.</p>
+    <p>Je réponds rapidement via WhatsApp, Facebook ou Email.</p>
+  </div>
+  <div class="contact">
+    <a class="btn whatsapp" href="https://wa.me/243962692716" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <a class="btn facebook" href="https://www.facebook.com/jenovic.mutshail.50" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+    <a class="btn email" href="mailto:musangjenovic@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+  </div>
 
-<p>
-  Je suis <strong>développeur web indépendant</strong> basé à Lubumbashi, en République Démocratique du Congo.
-</p>
+  <footer>
+    <p>© 2026 JENOVIC MUSANG — LUBUMBASHI, RDC</p>
+  </footer>
 
-<p>
-  Je conçois et développe des <strong>sites web modernes</strong>, <strong>rapides</strong> et <strong>adaptés aux téléphones</strong> (responsive design).
-</p>
-
-<p>
-  Mon objectif est de transformer des idées simples en <strong>interfaces propres</strong>, <strong>utiles</strong> et agréables à utiliser.
-</p>
-
-<p>
-  Je travaille principalement avec <strong>HTML</strong>, <strong>CSS</strong> et <strong>JavaScript</strong>, et j’aime créer des projets personnels pour améliorer mes compétences.
-</p>
-
-<p>
-  J’ai aussi de l’intérêt pour les <strong>applications web interactives</strong>, les animations UI et les designs modernes inspirés des interfaces Android et Apple.
-</p>
-
-<p>
-  Chaque jour, j’apprends de nouvelles techniques pour devenir un <strong>développeur plus complet</strong> et construire des projets professionnels.
-</p>
-
-<p>
-  Mon but est de participer à des projets réels, aider des clients et évoluer dans le monde du développement web.
-</p>
-</div>
-<p class="section">//  COLLABORATION</p>
-<h1 class="titre">Contact</h1>
-<div class="cnnt">
-<p>
-  Tu as un projet, une idée ou une collaboration ?  
-  N’hésite pas à me contacter.
-</p>
-
-<p>
-  Je suis disponible pour la création de sites web, projets personnels et collaborations.
-</p>
-
-<p>
- Je Réponds rapidement via WhatsApp, Facebook ou Email.
-</p>
-</div>
-<div class="contact">
-
-  <a class="btn whatsapp" href="https://wa.me/243962692716" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-  <a class="btn facebook" href="https://www.facebook.com/jenovic.mutshail.50" target="_blank">
-    <i class="fa-brands fa-facebook"></i>
-  </a>
-  <a class="btn email" href="mailto:musangjenovic@gmail.com">
-    <i class="fa-solid fa-envelope"></i>
-  </a>
-
-</div>
-
-<footer>
-  <p>© 2026 JENOVIC MUSANG — LUBUMBASHI, RDC</p>
-</footer>
 </body>
 </html>
