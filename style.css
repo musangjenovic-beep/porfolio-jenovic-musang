@@ -17,8 +17,6 @@ body{
     font-weight: 300;
     overflow-x: hidden;
     cursor: crosshair;
-    padding: 24px 20px;
-    box-sizing: border-box;
 }
  body::before {
     content: '';
@@ -149,25 +147,11 @@ body{
             align-items: center;
           
       }
-      /* Grille compétences */
-      .skills_grid {
-        display: grid;
-        grid-template-columns: repeat(2, 110px);
-        gap: 15px;
-        padding: 0 15px;
-        margin-bottom: 2rem;
-      }
-
-      /* Placeholder section projets */
-      .projets_placeholder {
-        min-height: 200px;
+      .n_1,.n_2{
+        justify-content: crnter;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px dashed var(--card-border);
-        border-radius: 6px;
-        margin-bottom: 3rem;
-      }
+        padding: 15px;
+        }
         .txt{
           font-family: 'Share Tech Mono', monospace;
           font-size: 27px;
@@ -201,6 +185,7 @@ body{
         .nom{
           font-size:50px;
           color: var(--tx-2);
+          font-family: 'Share Tech Mono', monospace;
         }
         .pl{
           color: var(--tx-2);
